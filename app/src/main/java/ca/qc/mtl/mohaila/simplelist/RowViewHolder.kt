@@ -4,8 +4,17 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
-class RowViewHolder(row: View) : RecyclerView.ViewHolder(row) {
+class RowViewHolder(row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {
+    override fun onClick(view: View?) {
+        Toast.makeText(view!!.context,"Row Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    init {
+        row.setOnClickListener(this)
+    }
+
     val title by lazy {
         row.findViewById<TextView>(R.id.title)
     }
