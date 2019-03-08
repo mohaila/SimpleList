@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
-class RowViewHolder(row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {
+class RowViewHolder(private val row: View) : RecyclerView.ViewHolder(row), View.OnClickListener {
     override fun onClick(view: View?) {
         Toast.makeText(view!!.context,"Row Clicked", Toast.LENGTH_SHORT).show()
     }
